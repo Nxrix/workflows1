@@ -43,10 +43,10 @@ jobs:
       run: |
         mkdir -p gifts assets
         if [ ! -d "gifts" ] || [ ! "$(ls -A gifts)" ]; then
-          cp -r workflows/privrepo/gifts ./gifts
+          cp -r workflows/gifts ./gifts
         fi
         if [ ! -d "assets" ] || [ ! "$(ls -A assets)" ]; then
-          cp -r workflows/privrepo/assets ./assets
+          cp -r workflows/assets ./assets
         fi
 
     - name: Run js
