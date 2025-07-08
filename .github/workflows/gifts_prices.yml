@@ -39,6 +39,16 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Copy gifts and assets if missing
+      run: |
+        mkdir -p gifts assets
+        if [ ! -d "gifts" ] || [ ! "$(ls -A gifts)" ]; then
+          cp -r workflows/privrepo/gifts ./gifts
+        fi
+        if [ ! -d "assets" ] || [ ! "$(ls -A assets)" ]; then
+          cp -r workflows/privrepo/assets ./assets
+        fi
+
     - name: Run js
       run: node workflows/gifts_prices.js
       env:
@@ -49,7 +59,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add gifts/
+        git add gifts/ assets/
         git commit -m "^"
         git pull
         git push
