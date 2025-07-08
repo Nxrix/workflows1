@@ -49,11 +49,11 @@ jobs:
           cp -r workflows/assets ./assets
         fi
 
-    - name: Run js
-      run: node workflows/gifts_prices.js
-      env:
-        API0_URL: ${{ secrets.API0_URL }}
-        API0_KEY: ${{ secrets.API0_KEY }}
+    #- name: Run js
+    #  run: node workflows/gifts_prices.js
+    #  env:
+    #    API0_URL: ${{ secrets.API0_URL }}
+    #    API0_KEY: ${{ secrets.API0_KEY }}
 
     - name: Commit changes
       run: |
