@@ -41,15 +41,3 @@ jobs:
 
     - name: Run js
       run: node workflows/gifts_stickers.js
-      env:
-        API0_URL: ${{ secrets.API0_URL }}
-        API0_KEY: ${{ secrets.API0_KEY }}
-
-    #- name: Commit changes
-    #  run: |
-    #    git config --local user.email "action@github.com"
-    #    git config --local user.name "GitHub Action"
-    #    git add gifts/
-    #    git commit -m "^"
-    #    git pull
-    #    git push
